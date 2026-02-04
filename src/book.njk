@@ -1,0 +1,429 @@
+---
+layout: base.njk
+title: Book Now
+description: Book your tattoo consultation or session with J. Atlanta-based tattoo artist specializing in black and gray realism.
+permalink: /book/
+---
+
+<header class="page-header">
+    <div class="container">
+        <span class="section-tag">Let's Do This</span>
+        <h1>Book Now</h1>
+        <p>New here? Start with a consultation. Been before? Book your session.</p>
+    </div>
+</header>
+
+<section class="book-content">
+    <div class="container">
+        
+        <!-- Client Type Toggle -->
+        <div class="client-toggle">
+            <button class="toggle-btn active" data-client="new">New Client</button>
+            <button class="toggle-btn" data-client="returning">Returning Client</button>
+        </div>
+
+        <!-- New Client Section -->
+        <div class="client-section active" id="new-client">
+            <div class="book-grid">
+                <div class="book-info">
+                    <h2>First Time Here?</h2>
+                    <p>All new clients start with a consultation. This is where we discuss your idea, placement, sizing, and make sure we're a good fit. The $50 consultation fee goes toward your tattoo.</p>
+                    
+                    <div class="book-steps">
+                        <div class="book-step">
+                            <span class="book-step-number">01</span>
+                            <div class="book-step-content">
+                                <h4>Fill Out The Form</h4>
+                                <p>Tell me about your tattoo idea — the more detail, the better.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">02</span>
+                            <div class="book-step-content">
+                                <h4>Pay Consultation Fee</h4>
+                                <p>$50 secures your consultation spot. This goes toward your tattoo.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">03</span>
+                            <div class="book-step-content">
+                                <h4>Book Your Time</h4>
+                                <p>After payment, you'll pick a consultation time that works for you.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">04</span>
+                            <div class="book-step-content">
+                                <h4>Meet & Plan</h4>
+                                <p>We'll discuss your vision, I'll give you a quote, and we'll get you scheduled.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-note">
+                        <p><strong>Why a consultation?</strong> Every tattoo I do is custom. The consultation lets me understand your vision, assess the placement, and give you an accurate quote. No surprises.</p>
+                    </div>
+                </div>
+
+                <div class="book-form">
+                    <h3>Tell Me About Your Tattoo</h3>
+                    <form id="consultation-form" name="consultation" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="consultation">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="new-firstName">First Name *</label>
+                                <input type="text" id="new-firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-lastName">Last Name *</label>
+                                <input type="text" id="new-lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="new-email">Email *</label>
+                                <input type="email" id="new-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-phone">Phone *</label>
+                                <input type="tel" id="new-phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tattooType">What type of tattoo? *</label>
+                            <select id="tattooType" name="tattooType" required>
+                                <option value="">Select one</option>
+                                <option value="portrait">Portrait</option>
+                                <option value="realism">Realism</option>
+                                <option value="custom">Custom Design</option>
+                                <option value="coverup">Cover-Up</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="placement">Placement *</label>
+                                <input type="text" id="placement" name="placement" placeholder="e.g., forearm, back, chest" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="size">Approximate Size *</label>
+                                <select id="size" name="size" required>
+                                    <option value="">Select size</option>
+                                    <option value="small">Small (2-3 inches)</option>
+                                    <option value="medium">Medium (4-6 inches)</option>
+                                    <option value="large">Large (7-10 inches)</option>
+                                    <option value="xlarge">Extra Large (10+ inches)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Describe Your Idea *</label>
+                            <textarea id="description" name="description" placeholder="Tell me everything — the more detail, the better. Include any meaning behind the piece, style preferences, etc." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referenceImages">Reference Images (optional)</label>
+                            <input type="text" id="referenceImages" name="referenceImages" placeholder="Paste links to any reference images (Pinterest, Google Drive, etc.)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget</option>
+                                <option value="300-500">$300 - $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2000">$1,000 - $2,000</option>
+                                <option value="2000+">$2,000+</option>
+                                <option value="unsure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hearAbout">How did you hear about me?</label>
+                            <select id="hearAbout" name="hearAbout">
+                                <option value="">Select one</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="tiktok">TikTok</option>
+                                <option value="google">Google Search</option>
+                                <option value="referral">Friend/Referral</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Payment — $50</button>
+                        
+                        <p class="form-note">After submitting, you'll be redirected to pay the $50 consultation fee, then book your time.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Returning Client Section -->
+        <div class="client-section" id="returning-client">
+            <div class="book-grid">
+                <div class="book-info">
+                    <h2>Welcome Back!</h2>
+                    <p>Ready for your next piece? Pay your $200 deposit to lock in your session, then pick your appointment time.</p>
+                    
+                    <div class="book-steps">
+                        <div class="book-step">
+                            <span class="book-step-number">01</span>
+                            <div class="book-step-content">
+                                <h4>Quick Details</h4>
+                                <p>Fill out the short form so I know what you're coming in for.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">02</span>
+                            <div class="book-step-content">
+                                <h4>Pay Deposit</h4>
+                                <p>$200 deposit secures your spot. Goes toward your total.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">03</span>
+                            <div class="book-step-content">
+                                <h4>Book Your Session</h4>
+                                <p>Choose your session length and pick a date that works.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">04</span>
+                            <div class="book-step-content">
+                                <h4>Get Inked</h4>
+                                <p>Show up ready. You know the drill.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-note">
+                        <p><strong>Not sure which session length?</strong> Check what we discussed in your consultation. Small pieces = 2-3 hours, Medium = 4-6 hours, Full day = 6-7 hours.</p>
+                    </div>
+                </div>
+
+                <div class="book-form">
+                    <h3>Book Your Session</h3>
+                    <form id="deposit-form" name="deposit" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="deposit">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ret-firstName">First Name *</label>
+                                <input type="text" id="ret-firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ret-lastName">Last Name *</label>
+                                <input type="text" id="ret-lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ret-email">Email *</label>
+                                <input type="email" id="ret-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ret-phone">Phone *</label>
+                                <input type="tel" id="ret-phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sessionType">Session Length *</label>
+                            <select id="sessionType" name="sessionType" required>
+                                <option value="">Select session length</option>
+                                <option value="small">Small Session (2-3 hours)</option>
+                                <option value="medium">Medium Session (4-6 hours)</option>
+                                <option value="fullday">Full Day Session (6-7 hours)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ret-description">What are we working on? *</label>
+                            <textarea id="ret-description" name="description" placeholder="Brief description of your tattoo" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Payment — $200</button>
+                        
+                        <p class="form-note">After submitting, you'll be redirected to pay the $200 deposit, then book your session.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Additional Info -->
+<section style="background: var(--black); padding: 4rem 0;">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Consultation Fee</h3>
+                <p>The $50 consultation fee is required for all new clients. This covers our planning session and goes directly toward your tattoo cost — it's not an extra fee.</p>
+            </div>
+            <div class="info-card">
+                <h3>Session Deposit</h3>
+                <p>The $200 deposit secures your tattoo appointment. It's applied to your final cost. Required for all tattoo sessions.</p>
+            </div>
+            <div class="info-card">
+                <h3>Cancellations</h3>
+                <p>Life happens, I get it. Just give me 48+ hours notice for a full refund. Less than 48 hours or no-shows forfeit the deposit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Client Toggle */
+.client-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 1.25rem 2rem;
+    background: var(--gray);
+    border: 2px solid var(--light-gray);
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toggle-btn:first-child {
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+
+.toggle-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.toggle-btn:hover {
+    background: var(--light-gray);
+}
+
+.toggle-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--black);
+}
+
+/* Client Sections */
+.client-section {
+    display: none;
+}
+
+.client-section.active {
+    display: block;
+}
+
+/* Consultation Note */
+.consultation-note {
+    background: var(--gray);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent);
+    margin-top: 2rem;
+}
+
+.consultation-note p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--cream);
+}
+
+/* Form Note */
+.form-note {
+    text-align: center;
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+</style>
+
+<script>
+// Toggle between new and returning client
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const clientSections = document.querySelectorAll('.client-section');
+    
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Show correct section
+            const clientType = btn.dataset.client;
+            clientSections.forEach(section => {
+                section.classList.remove('active');
+                if (section.id === clientType + '-client') {
+                    section.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Handle consultation form submission
+    document.getElementById('consultation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Save form data to localStorage for reference
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        localStorage.setItem('consultationData', JSON.stringify(data));
+        
+        // Submit to Netlify Forms
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            // Redirect to Stripe checkout for consultation
+            window.location.href = '/checkout/consultation/';
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again.');
+        });
+    });
+
+    // Handle deposit form submission
+    document.getElementById('deposit-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Save form data and session type
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        localStorage.setItem('depositData', JSON.stringify(data));
+        
+        // Submit to Netlify Forms
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            // Redirect to Stripe checkout for deposit with session type
+            const sessionType = data.sessionType;
+            window.location.href = '/checkout/deposit/?session=' + sessionType;
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('Something went wrong. Please try again.');
+        });
+    });
+});
+</script>
