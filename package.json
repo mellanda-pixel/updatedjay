@@ -1,0 +1,13 @@
+{
+  "name": "getinkedbyj-website",
+  "version": "1.0.0",
+  "description": "Get Inked By J - Tattoo Artist Website",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "stripe": "^14.0.0"
+  }
+}

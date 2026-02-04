@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: Checkout - Consultation
+description: Complete your consultation payment
+permalink: /checkout/consultation/
+---
+
+<section class="checkout-page">
+    <div class="container">
+        <div class="checkout-box">
+            <h1>Processing Payment...</h1>
+            <p>Redirecting you to secure checkout.</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+.checkout-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    padding: 8rem 0;
+}
+
+.checkout-box {
+    text-align: center;
+    background: var(--gray);
+    padding: 3rem;
+    max-width: 500px;
+}
+
+.checkout-box h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.checkout-box p {
+    color: var(--cream);
+    margin-bottom: 2rem;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--light-gray);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const response = await fetch('/.netlify/functions/create-checkout-consultation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const data = await response.json();
+        
+        if (data.url) {
+            window.location.href = data.url;
+        } else {
+            throw new Error('No checkout URL received');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.querySelector('.checkout-box').innerHTML = `
+            <h1>Something Went Wrong</h1>
+            <p>Unable to process payment. Please try again.</p>
+            <a href="/book/" class="btn btn-primary">Back to Booking</a>
+        `;
+    }
+});
+</script>
