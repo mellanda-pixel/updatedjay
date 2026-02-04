@@ -349,3 +349,12 @@ section[id] { scroll-margin-top: 80px; }
 .elfsight-app-instagram-feed {
     --es-font-family: var(--font-body) !important;
 }
+/* Instagram Feed Full Width */
+.instagram-section .instagram-feed {
+    max-width: 100%;
+    width: 100%;
+}
+
+.instagram-section .container {
+    max-width: 1400px;
+}
