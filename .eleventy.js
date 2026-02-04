@@ -1,9 +1,9 @@
 module.exports = function(eleventyConfig) {
-  // Copy static assets
- eleventyConfig.addPassthroughCopy("css");
-   eleventyConfig.addPassthroughCopy("js");
-   eleventyConfig.addPassthroughCopy("images");
-   eleventyConfig.addPassthroughCopy("admin");
+  // Copy static assets - use object syntax to maintain folder structure
+  eleventyConfig.addPassthroughCopy({"src/css": "css"});
+  eleventyConfig.addPassthroughCopy({"src/js": "js"});
+  eleventyConfig.addPassthroughCopy({"src/images": "images"});
+  eleventyConfig.addPassthroughCopy({"src/admin": "admin"});
 
   // Create a collection for blog posts
   eleventyConfig.addCollection("posts", function(collectionApi) {
