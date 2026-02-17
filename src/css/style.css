@@ -370,3 +370,52 @@ section[id] { scroll-margin-top: 80px; }
 .detail-item ul li::before { content: '•'; color: var(--accent); margin-right: 0.5rem; }
 
 .details-note { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
+
+/* ================================
+   STICKY BAR
+================================ */
+.sticky-bar { position: fixed; top: 0; left: 0; right: 0; background: var(--accent); color: var(--dark); padding: 0.75rem 1rem; display: flex; justify-content: center; align-items: center; gap: 1rem; z-index: 9999; font-size: 0.85rem; }
+.sticky-bar p { font-family: var(--font-body); font-weight: 700; margin: 0; }
+.sticky-bar span { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 1px; }
+.sticky-bar-btn { background: var(--dark); color: var(--accent); border: none; padding: 0.5rem 1rem; font-family: var(--font-display); font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; }
+.sticky-bar-btn:hover { background: var(--cream); color: var(--dark); }
+.sticky-bar-close { position: absolute; right: 1rem; background: none; border: none; color: var(--dark); font-size: 1.2rem; cursor: pointer; opacity: 0.7; }
+.sticky-bar-close:hover { opacity: 1; }
+
+/* ================================
+   PROMO POP-UP
+================================ */
+.popup-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 10000; padding: 1rem; }
+.popup-overlay.hidden { display: none; }
+.popup { background: var(--gray); max-width: 500px; width: 100%; position: relative; border: 2px solid var(--accent); }
+.popup-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--cream); font-size: 2rem; cursor: pointer; opacity: 0.7; z-index: 1; line-height: 1; }
+.popup-close:hover { opacity: 1; }
+.popup-header { background: var(--accent); color: var(--dark); padding: 1.5rem 2rem; text-align: center; }
+.popup-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 0.5rem; }
+.popup-header h2 { font-family: var(--font-display); font-size: 2.5rem; letter-spacing: 2px; line-height: 1.1; margin: 0; }
+.popup-discount { font-family: var(--font-display); font-size: 4rem; letter-spacing: 2px; margin: 0.5rem 0; }
+.popup-header p:last-child { font-size: 0.9rem; margin: 0; }
+.popup-body { padding: 2rem; }
+.popup-body > p { text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem; opacity: 0.9; }
+.popup-form { display: flex; flex-direction: column; gap: 1rem; }
+.popup-form input { background: var(--dark); border: 1px solid #333; padding: 1rem; color: var(--cream); font-family: var(--font-body); font-size: 0.9rem; }
+.popup-form input:focus { outline: none; border-color: var(--accent); }
+.popup-form input::placeholder { color: #666; }
+.popup-form button { background: var(--accent); color: var(--dark); border: none; padding: 1rem; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+.popup-form button:hover { background: var(--cream); }
+.popup-privacy { text-align: center; font-size: 0.75rem; opacity: 0.5; margin-top: 1rem; }
+
+/* Sticky bar offset for nav */
+body.has-sticky-bar nav { top: 45px; }
+body.has-sticky-bar .page-header { margin-top: 45px; }
+body.has-sticky-bar .hero { margin-top: 45px; }
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .sticky-bar { flex-direction: column; gap: 0.5rem; padding: 0.75rem 2.5rem 0.75rem 1rem; text-align: center; }
+    .sticky-bar p { font-size: 0.75rem; }
+    .sticky-bar span { font-size: 0.9rem; }
+    .popup-header h2 { font-size: 1.8rem; }
+    .popup-discount { font-size: 3rem; }
+    .popup-body { padding: 1.5rem; }
+}
