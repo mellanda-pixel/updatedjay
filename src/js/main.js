@@ -1,7 +1,6 @@
 // ========================================
 // GET INKED BY J - Main JavaScript
 // ========================================
-
 document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile Menu Toggle
@@ -77,5 +76,80 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ================================
+    // PROMO POP-UP & STICKY BAR
+    // ================================
+    
+    const stickyBar = document.getElementById('stickyBar');
+    const promoPopup = document.getElementById('promoPopup');
+    const COOKIE_NAME = 'promo_dismissed';
+    const COOKIE_DAYS = 7;
+
+    // Check if promo was dismissed
+    function isPromoDismissed() {
+        return document.cookie.includes(COOKIE_NAME + '=true');
+    }
+
+    // Set dismissal cookie
+    function setPromoCookie() {
+        const date = new Date();
+        date.setTime(date.getTime() + (COOKIE_DAYS * 24 * 60 * 60 * 1000));
+        document.cookie = COOKIE_NAME + '=true;expires=' + date.toUTCString() + ';path=/';
+    }
+
+    // Show popup
+    window.showPromoPopup = function() {
+        if (promoPopup) {
+            promoPopup.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    // Hide popup
+    window.hidePromoPopup = function(event) {
+        if (promoPopup) {
+            promoPopup.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Hide sticky bar
+    window.hideSticky = function() {
+        if (stickyBar) {
+            stickyBar.style.display = 'none';
+            document.body.classList.remove('has-sticky-bar');
+            setPromoCookie();
+        }
+    };
+
+    // Click outside popup to close
+    if (promoPopup) {
+        promoPopup.addEventListener('click', function(e) {
+            if (e.target === promoPopup) {
+                hidePromoPopup();
+            }
+        });
+    }
+
+    // Initialize on page load
+    if (!isPromoDismissed()) {
+        // Show sticky bar
+        if (stickyBar) {
+            document.body.classList.add('has-sticky-bar');
+        }
+        
+        // Auto-show popup after 5 seconds (first visit only)
+        setTimeout(function() {
+            if (!isPromoDismissed() && promoPopup) {
+                showPromoPopup();
+            }
+        }, 5000);
+    } else {
+        // Hide sticky bar if already dismissed
+        if (stickyBar) {
+            stickyBar.style.display = 'none';
+        }
+    }
 
 });
