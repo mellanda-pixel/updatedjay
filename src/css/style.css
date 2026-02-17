@@ -407,8 +407,8 @@ section[id] { scroll-margin-top: 80px; }
 
 /* Sticky bar offset for nav */
 body.has-sticky-bar nav { top: 45px; }
-body.has-sticky-bar .page-header { margin-top: 45px; }
-body.has-sticky-bar .hero { margin-top: 45px; }
+body.has-sticky-bar .page-header { padding-top: 12rem; }
+body.has-sticky-bar .hero { padding-top: 10rem; }
 
 /* Mobile responsive */
 @media (max-width: 600px) {
@@ -418,4 +418,9 @@ body.has-sticky-bar .hero { margin-top: 45px; }
     .popup-header h2 { font-size: 1.8rem; }
     .popup-discount { font-size: 3rem; }
     .popup-body { padding: 1.5rem; }
+    
+    /* Mobile sticky bar offset - taller on mobile */
+    body.has-sticky-bar nav { top: 85px; }
+    body.has-sticky-bar .page-header { padding-top: 14rem; }
+    body.has-sticky-bar .hero { padding-top: 12rem; }
 }
