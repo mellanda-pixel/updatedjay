@@ -10,7 +10,7 @@ permalink: /pay-deposit/
         <div class="pay-deposit-box">
             <span class="section-tag">Secure Your Session</span>
             <h1>Pay Your Deposit</h1>
-            <p>Select your session length and pay your $400 deposit to book your tattoo appointment.</p>
+            <p>Select your session length and pay your $400 non-refundable deposit to book your tattoo appointment.</p>
             
             <div class="session-selector">
                 <h3>Select Your Session Length</h3>
@@ -27,27 +27,28 @@ permalink: /pay-deposit/
                     </button>
                     <button class="session-option" data-session="fullday">
                         <span class="session-name">Full Day Session</span>
-                        <span class="session-duration">6-7 hours</span>
+                        <span class="session-duration">7+ hours</span>
                     </button>
                 </div>
                 
                 <div class="deposit-amount">
                     <span>Deposit Amount:</span>
-                    <span class="amount">$200</span>
+                    <span class="amount">$400</span>
                 </div>
                 
                 <button id="pay-button" class="btn btn-primary" disabled style="width: 100%;">Select a Session to Continue</button>
                 
-                <p class="deposit-note">This deposit goes toward your total tattoo cost. After payment, you'll pick your appointment time.</p>
+                <p class="deposit-note">This non-refundable deposit goes toward your total tattoo cost. After payment, you'll pick your appointment time.</p>
             </div>
 
             <div class="deposit-info">
                 <h3>Deposit Policy</h3>
                 <ul>
+                    <li>All deposits are non-refundable — no exceptions</li>
                     <li>Deposit is applied to your final tattoo cost</li>
-                    <li>48+ hours notice for cancellation = full refund</li>
-                    <li>Less than 48 hours notice = deposit forfeited</li>
-                    <li>No-shows = deposit forfeited</li>
+                    <li>One reschedule allowed with 48+ hours notice</li>
+                    <li>Reschedule under 48 hours = deposit forfeited</li>
+                    <li>No-shows = deposit forfeited, new deposit required</li>
                 </ul>
             </div>
         </div>
@@ -214,13 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedSession = option.dataset.session;
             // Enable button
             payButton.disabled = false;
-            payButton.textContent = 'Continue to Payment — $200';
+            payButton.textContent = 'Continue to Payment — $400';
         });
     });
     
     payButton.addEventListener('click', () => {
         if (selectedSession) {
-            window.location.href = `/checkout/deposit/?session=${selectedSession}`;
+            window.location.href = `/checkout/deposit/?session=${selectedType}`;
         }
     });
 });
