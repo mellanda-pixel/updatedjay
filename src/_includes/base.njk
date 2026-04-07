@@ -22,34 +22,9 @@
 <body>
     <!-- Sticky Bar -->
     <div class="sticky-bar" id="stickyBar">
-        <p><span>🔥 CREATIVE FREEDOM SPECIAL</span> — Full Day Session 25% OFF</p>
-        <button class="sticky-bar-btn" onclick="showPromoPopup()">CLAIM OFFER</button>
+        <p><span>🔥 CREATIVE FREEDOM SPECIAL</span> — Full Day Session 10% OFF</p>
+        <a href="/book/" class="sticky-bar-btn">BOOK NOW</a>
         <button class="sticky-bar-close" onclick="hideSticky()">✕</button>
-    </div>
-
-    <!-- Promo Pop-up -->
-    <div class="popup-overlay hidden" id="promoPopup">
-        <div class="popup">
-            <button class="popup-close" onclick="hidePromoPopup()">×</button>
-            <div class="popup-header">
-                <p class="popup-tag">Limited Time Offer</p>
-                <h2>CREATIVE FREEDOM<br>FULL DAY SESSION</h2>
-                <p class="popup-discount">25% OFF</p>
-                <p>Let me bring your vision to life</p>
-            </div>
-            <div class="popup-body">
-                <p>Drop your info below and I'll reach out to book your discounted session.</p>
-                <form class="popup-form" name="creative-freedom" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="creative-freedom">
-                    <input type="hidden" name="bot-field">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" required>
-                    <button type="submit">LOCK IN MY 25% OFF</button>
-                </form>
-                <p class="popup-privacy">Your info stays private. No spam, ever.</p>
-            </div>
-        </div>
     </div>
 
     <nav>
