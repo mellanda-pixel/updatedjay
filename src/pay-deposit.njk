@@ -10,7 +10,7 @@ permalink: /pay-deposit/
         <div class="pay-deposit-box">
             <span class="section-tag">Secure Your Session</span>
             <h1>Pay Your Deposit</h1>
-            <p>Select your session length and pay your $400 non-refundable deposit to book your tattoo appointment.</p>
+            <p>Select your session length and pay your $200 non-refundable deposit to book your tattoo appointment.</p>
             
             <div class="session-selector">
                 <h3>Select Your Session Length</h3>
@@ -33,7 +33,7 @@ permalink: /pay-deposit/
                 
                 <div class="deposit-amount">
                     <span>Deposit Amount:</span>
-                    <span class="amount">$400</span>
+                    <span class="amount">$200</span>
                 </div>
                 
                 <button id="pay-button" class="btn btn-primary" disabled style="width: 100%;">Select a Session to Continue</button>
@@ -215,13 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedSession = option.dataset.session;
             // Enable button
             payButton.disabled = false;
-            payButton.textContent = 'Continue to Payment — $400';
+            payButton.textContent = 'Continue to Payment — $200';
         });
     });
     
     payButton.addEventListener('click', () => {
         if (selectedSession) {
-            window.location.href = `/checkout/deposit/?session=${selectedType}`;
+            window.location.href = `/checkout/deposit/?session=${selectedSession}`;
         }
     });
 });
