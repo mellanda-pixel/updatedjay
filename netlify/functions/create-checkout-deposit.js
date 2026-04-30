@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
     const calendlyUrls = {
       small: 'https://calendly.com/jaylen-getinkedbyj/small-session-2-3-hrs',
       medium: 'https://calendly.com/jaylen-getinkedbyj/medium-session-4-6-hours',
-      fullday: 'https://calendly.com/jaylen-getinkedbyj/full-day-session-6-7-hours'
+      fullday: 'https://calendly.com/jaylen-getinkedbyj/full-day-session-7-hours'
     };
     const sessionNames = {
       small: 'Small Session (2-3 hours)',
@@ -32,7 +32,7 @@ exports.handler = async (event, context) => {
               name: 'Tattoo Session Deposit (Non-Refundable)',
               description: `Non-refundable deposit for ${sessionNames[sessionType]}. This amount goes toward your final tattoo cost.`,
             },
-            unit_amount: 40000, // $400 in cents
+            unit_amount: 20000, // $200 in cents
           },
           quantity: 1,
         },
