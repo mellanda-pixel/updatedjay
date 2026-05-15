@@ -4,7 +4,6 @@ title: Checkout - Deposit
 description: Complete your deposit payment
 permalink: /checkout/deposit/
 ---
-
 <section class="checkout-page">
     <div class="container">
         <div class="checkout-box">
@@ -14,7 +13,6 @@ permalink: /checkout/deposit/
         </div>
     </div>
 </section>
-
 <style>
 .checkout-page {
     min-height: 60vh;
@@ -24,24 +22,20 @@ permalink: /checkout/deposit/
     background: var(--dark);
     padding: 8rem 0;
 }
-
 .checkout-box {
     text-align: center;
     background: var(--gray);
     padding: 3rem;
     max-width: 500px;
 }
-
 .checkout-box h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-
 .checkout-box p {
     color: var(--cream);
     margin-bottom: 2rem;
 }
-
 .loader {
     width: 50px;
     height: 50px;
@@ -51,21 +45,20 @@ permalink: /checkout/deposit/
     margin: 0 auto;
     animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
 </style>
-
 <script src="https://js.stripe.com/v3/"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function() {
-    // Get session type from URL
+    // Get session type and addon from URL
     const urlParams = new URLSearchParams(window.location.search);
     const sessionType = urlParams.get('session') || 'small';
+    const addon = urlParams.get('addon') || 'none';
     
     try {
-        const response = await fetch(`/.netlify/functions/create-checkout-deposit?session=${sessionType}`, {
+        const response = await fetch(`/.netlify/functions/create-checkout-deposit?session=${sessionType}&addon=${addon}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         });
