@@ -257,10 +257,72 @@ permalink: /book/
                             <label for="ret-description">What are we working on? *</label>
                             <textarea id="ret-description" name="description" placeholder="Brief description of your tattoo" required></textarea>
                         </div>
+
+                        <!-- Add-Ons Section -->
+                        <div class="addons-section">
+                            <h4>Enhance Your Session</h4>
+                            <p class="addons-note">Most clients add these — can't purchase day-of</p>
+                            
+                            <div class="addon-options">
+                                <label class="addon-option selected" data-addon="bundle" data-price="90">
+                                    <input type="radio" name="addon" value="bundle" checked>
+                                    <div class="addon-content">
+                                        <div class="addon-header">
+                                            <span class="addon-name">Comfort Bundle</span>
+                                            <span class="addon-badge">BEST VALUE</span>
+                                        </div>
+                                        <span class="addon-desc">Numbing cream + Aftercare kit</span>
+                                        <span class="addon-price">$90 <span class="addon-savings">Save $20</span></span>
+                                    </div>
+                                </label>
+                                
+                                <label class="addon-option" data-addon="numbing" data-price="50">
+                                    <input type="radio" name="addon" value="numbing">
+                                    <div class="addon-content">
+                                        <span class="addon-name">Numbing Cream</span>
+                                        <span class="addon-desc">Applied before your session for a more comfortable experience</span>
+                                        <span class="addon-price">$50</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="addon-option" data-addon="aftercare" data-price="60">
+                                    <input type="radio" name="addon" value="aftercare">
+                                    <div class="addon-content">
+                                        <span class="addon-name">Aftercare Kit</span>
+                                        <span class="addon-desc">Everything you need for proper healing</span>
+                                        <span class="addon-price">$60</span>
+                                    </div>
+                                </label>
+                                
+                                <label class="addon-option" data-addon="none" data-price="0">
+                                    <input type="radio" name="addon" value="none">
+                                    <div class="addon-content">
+                                        <span class="addon-name">No Add-Ons</span>
+                                        <span class="addon-desc">Just the deposit</span>
+                                        <span class="addon-price">$0</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
                         
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Continue to Payment — $200</button>
+                        <div class="order-summary">
+                            <div class="summary-row">
+                                <span>Session Deposit</span>
+                                <span>$200</span>
+                            </div>
+                            <div class="summary-row addon-row">
+                                <span>Comfort Bundle</span>
+                                <span>$90</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Due Today</span>
+                                <span id="totalAmount">$290</span>
+                            </div>
+                        </div>
                         
-                        <p class="form-note">After submitting, you'll be redirected to pay the $200 non-refundable deposit, then book your session.</p>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="depositSubmitBtn">Continue to Payment — $290</button>
+                        
+                        <p class="form-note">After submitting, you'll be redirected to pay, then book your session.</p>
                     </form>
                 </div>
             </div>
@@ -382,6 +444,134 @@ permalink: /book/
     margin-top: 1rem;
 }
 
+/* Add-Ons Section */
+.addons-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--dark);
+    border: 1px solid var(--light-gray);
+}
+
+.addons-section h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.addons-note {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.addon-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.addon-option {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    background: var(--gray);
+    border: 2px solid var(--light-gray);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.addon-option:hover {
+    border-color: var(--accent);
+}
+
+.addon-option.selected {
+    border-color: var(--accent);
+    background: rgba(201, 255, 0, 0.1);
+}
+
+.addon-option input {
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    accent-color: var(--accent);
+}
+
+.addon-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.addon-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.addon-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.addon-badge {
+    background: var(--accent);
+    color: var(--dark);
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.addon-desc {
+    font-size: 0.85rem;
+    color: var(--cream);
+    opacity: 0.7;
+}
+
+.addon-price {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-top: 0.25rem;
+}
+
+.addon-savings {
+    font-size: 0.75rem;
+    color: var(--cream);
+    opacity: 0.8;
+    margin-left: 0.5rem;
+}
+
+/* Order Summary */
+.order-summary {
+    background: var(--dark);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    color: var(--cream);
+}
+
+.summary-row.total {
+    border-top: 1px solid var(--light-gray);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+}
+
+.summary-row.total span:last-child {
+    color: var(--accent);
+}
+
 /* Mobile */
 @media (max-width: 600px) {
     .client-question h2 {
@@ -392,6 +582,10 @@ permalink: /book/
         padding: 1.25rem 2rem;
         font-size: 1.1rem;
         width: 100%;
+    }
+    
+    .addon-header {
+        flex-wrap: wrap;
     }
 }
 </style>
@@ -451,6 +645,61 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Add-ons functionality
+    const addonOptions = document.querySelectorAll('.addon-option');
+    const addonRow = document.querySelector('.addon-row');
+    const totalAmount = document.getElementById('totalAmount');
+    const depositSubmitBtn = document.getElementById('depositSubmitBtn');
+    const depositBase = 200;
+    
+    const addonPrices = {
+        bundle: 90,
+        numbing: 50,
+        aftercare: 60,
+        none: 0
+    };
+    
+    const addonNames = {
+        bundle: 'Comfort Bundle',
+        numbing: 'Numbing Cream',
+        aftercare: 'Aftercare Kit',
+        none: 'No Add-Ons'
+    };
+
+    function updateTotal() {
+        const selectedAddon = document.querySelector('input[name="addon"]:checked').value;
+        const addonPrice = addonPrices[selectedAddon];
+        const total = depositBase + addonPrice;
+        
+        // Update summary
+        if (selectedAddon === 'none') {
+            addonRow.style.display = 'none';
+        } else {
+            addonRow.style.display = 'flex';
+            addonRow.querySelector('span:first-child').textContent = addonNames[selectedAddon];
+            addonRow.querySelector('span:last-child').textContent = '$' + addonPrice;
+        }
+        
+        totalAmount.textContent = '$' + total;
+        depositSubmitBtn.textContent = 'Continue to Payment — $' + total;
+        
+        // Update selected state
+        addonOptions.forEach(opt => {
+            if (opt.querySelector('input').checked) {
+                opt.classList.add('selected');
+            } else {
+                opt.classList.remove('selected');
+            }
+        });
+    }
+
+    addonOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            this.querySelector('input').checked = true;
+            updateTotal();
+        });
+    });
+
     // Handle deposit form submission
     document.getElementById('deposit-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -465,7 +714,8 @@ document.addEventListener('DOMContentLoaded', function() {
             body: new URLSearchParams(formData).toString()
         }).then(() => {
             const sessionType = data.sessionType;
-            window.location.href = '/checkout/deposit/?session=' + sessionType;
+            const addon = data.addon || 'none';
+            window.location.href = '/checkout/deposit/?session=' + sessionType + '&addon=' + addon;
         }).catch(error => {
             console.error('Error:', error);
             alert('Something went wrong. Please try again.');
