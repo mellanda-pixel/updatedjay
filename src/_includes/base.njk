@@ -65,6 +65,7 @@
                 <div class="footer-brand">
                     <a href="/" class="logo">INKED BY J</a>
                     <p>Atlanta-based tattoo artist specializing in black and gray realism. By appointment only.</p>
+                    <p class="footer-address">Inked by J, LLC<br>3343 Peachtree Rd NE, Suite 145 PMB 639<br>Atlanta, GA 30326</p>
                 </div>
                 <div class="footer-col">
                     <h4>Pages</h4>
@@ -84,7 +85,12 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Follow</h4>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/terms/">Terms of Service</a></li>
+                    </ul>
+                    <h4 style="margin-top: 1.5rem;">Follow</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/theinkedbyj" target="_blank"><img src="/images/uploads/icon-instagram.png" alt="Instagram" style="height: 24px;"></a>
                         <a href="https://www.tiktok.com/@theinkedbyj" target="_blank"><img src="/images/uploads/icon-tiktok.png" alt="TikTok" style="height: 24px;"></a>
@@ -110,7 +116,10 @@
         }
     </script>
     
-    <!-- Tidio Chat -->
-    <script src="//code.tidio.co/tqitfhx2x10xtf5oozwojaa0x39v3let.js" async></script>
+    <!-- GHL Chat Widget - Only on pages without forms -->
+    {% if page.url != "/book/" and page.url != "/contact/" %}
+    <div data-chat-widget data-widget-id="6a3fd6ec25f639c14f727af3" data-location-id="mnEC9izHK4vTO6APLdYD"></div>
+    <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a3fd6ec25f639c14f727af3" data-source="WEB_USER"></script>
+    {% endif %}
 </body>
 </html>
