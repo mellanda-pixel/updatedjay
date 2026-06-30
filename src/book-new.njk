@@ -83,7 +83,7 @@ permalink: /book-new/
 
         <!-- Returning Client Section: session menu + calendars -->
         <div class="client-section" id="returning-client">
-            <div class="back-link">
+            <div class="back-link" id="returningBackLink">
                 <a href="#" id="backToQuestion2">&larr; Back</a>
             </div>
 
@@ -216,8 +216,8 @@ permalink: /book-new/
 .cal-back-btn { display: inline-block; padding: 0.6rem 1.25rem; border: 1px solid var(--accent); color: var(--accent); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
 .cal-back-btn:hover { background: var(--accent); color: var(--black); text-decoration: none; }
 
-.calendar-embed-wrap { background: var(--white); min-height: 650px; }
-.calendar-embed-wrap iframe { min-height: 650px; width: 100%; }
+.calendar-embed-wrap { min-height: 800px; }
+.calendar-embed-wrap iframe { min-height: 800px; width: 100%; display: block; }
 
 @media (max-width: 768px) {
     .session-grid { gap: 1.5rem; }
@@ -296,8 +296,22 @@ document.addEventListener('DOMContentLoaded', function() {
         embedWrap.appendChild(iframe);
         document.getElementById('sessionMenu').style.display = 'none';
         document.getElementById('sessionCalendarView').style.display = 'block';
+        // Only show the "Choose a different session" button on the calendar — hide the section "Back"
+        document.getElementById('returningBackLink').style.display = 'none';
         // The page header becomes the session header
         setHeader('Book Your Session', 'Book ' + cfg.title, cfg.subtitle);
+        // Re-trigger GHL's embed resize so the dynamically-injected iframe auto-sizes (prevents top cutoff)
+        reloadEmbedScript();
+    }
+
+    function reloadEmbedScript() {
+        var existing = document.getElementById('ghl-embed-reload');
+        if (existing) existing.parentNode.removeChild(existing);
+        var s = document.createElement('script');
+        s.id = 'ghl-embed-reload';
+        s.src = 'https://client.getinkedbyj.com/js/form_embed.js';
+        s.type = 'text/javascript';
+        document.body.appendChild(s);
     }
 
     btnNo.addEventListener('click', function() {
@@ -341,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('sessionCalendarView').style.display = 'none';
         document.getElementById('sessionCalEmbed').innerHTML = '';
         document.getElementById('sessionMenu').style.display = 'block';
+        document.getElementById('returningBackLink').style.display = 'block';
         setHeader('Welcome Back', 'Choose Your Session', 'Pick a session below. A $200 deposit locks in your spot ($400 for 2-Day).');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
