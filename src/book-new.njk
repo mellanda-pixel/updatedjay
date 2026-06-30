@@ -75,7 +75,7 @@ permalink: /book-new/
                 <div class="book-form">
                     <h3>Book Your Consultation</h3>
                     <div class="calendar-embed-wrap">
-                        <iframe src="https://client.getinkedbyj.com/widget/booking/Dyg3BtKwtA13Ky9YaS8x" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="Dyg3BtKwtA13Ky9YaS8x_consult"></iframe>
+                        <iframe src="https://client.getinkedbyj.com/widget/booking/Dyg3BtKwtA13Ky9YaS8x" style="width:100%;border:none;overflow:hidden;" scrolling="no" allow="payment *; clipboard-write" id="Dyg3BtKwtA13Ky9YaS8x_consult"></iframe>
                     </div>
                 </div>
             </div>
@@ -292,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         iframe.style.border = 'none';
         iframe.style.overflow = 'hidden';
         iframe.scrolling = 'no';
+        iframe.setAttribute('allow', 'payment *; clipboard-write');
         iframe.id = cfg.id + '_embed';
         embedWrap.appendChild(iframe);
         document.getElementById('sessionMenu').style.display = 'none';
