@@ -1,0 +1,348 @@
+---
+layout: base.njk
+title: Book Now
+description: Book your tattoo consultation or session with J. Atlanta-based tattoo artist specializing in black and gray realism.
+permalink: /book-new/
+---
+
+<header class="page-header">
+    <div class="container">
+        <span class="section-tag">Let's Do This</span>
+        <h1>Book Now</h1>
+        <p>Answer one quick question to get started.</p>
+    </div>
+</header>
+
+<section class="book-content">
+    <div class="container">
+
+        <!-- Client Type Question -->
+        <div class="client-question" id="clientQuestion">
+            <h2>Have you had a consultation with J before?</h2>
+            <p>This helps us send you to the right place.</p>
+            <div class="question-buttons">
+                <button class="question-btn" id="btnNo">NO, I'M NEW</button>
+                <button class="question-btn" id="btnYes">YES, I HAVE</button>
+            </div>
+        </div>
+
+        <!-- New Client Section: Phone Consultation calendar -->
+        <div class="client-section" id="new-client">
+            <div class="back-link">
+                <a href="#" id="backToQuestion">&larr; Back</a>
+            </div>
+            <div class="book-grid">
+                <div class="book-info">
+                    <h2>First Time Here?</h2>
+                    <p>All new clients start with a consultation. This is where we discuss your idea, placement, sizing, and make sure we're a good fit. The $50 consultation fee goes toward your tattoo.</p>
+
+                    <div class="book-steps">
+                        <div class="book-step">
+                            <span class="book-step-number">01</span>
+                            <div class="book-step-content">
+                                <h4>Pick Your Time</h4>
+                                <p>Choose a consultation slot that works for you.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">02</span>
+                            <div class="book-step-content">
+                                <h4>Tell Me About Your Idea</h4>
+                                <p>Fill in a few details so I know what you're thinking.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">03</span>
+                            <div class="book-step-content">
+                                <h4>Pay The $50 Fee</h4>
+                                <p>$50 secures your consultation. This goes toward your tattoo.</p>
+                            </div>
+                        </div>
+                        <div class="book-step">
+                            <span class="book-step-number">04</span>
+                            <div class="book-step-content">
+                                <h4>Meet & Plan</h4>
+                                <p>We'll discuss your vision, I'll give you a quote, and we'll get you scheduled.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-note">
+                        <p><strong>Why a consultation?</strong> Every tattoo I do is custom. The consultation lets me understand your vision, assess the placement, and give you an accurate quote. No surprises.</p>
+                    </div>
+                </div>
+
+                <div class="book-form">
+                    <h3>Book Your Consultation</h3>
+                    <div class="calendar-embed-wrap">
+                        <iframe src="https://client.getinkedbyj.com/widget/booking/Dyg3BtKwtA13Ky9YaS8x" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="Dyg3BtKwtA13Ky9YaS8x_consult"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Returning Client Section: session menu + calendars -->
+        <div class="client-section" id="returning-client">
+            <div class="back-link">
+                <a href="#" id="backToQuestion2">&larr; Back</a>
+            </div>
+
+            <!-- Session Menu -->
+            <div id="sessionMenu">
+                <div class="returning-intro">
+                    <h2>Welcome Back!</h2>
+                    <p>Choose your session below. A $200 deposit locks in your spot and goes toward your total. (2-Day is a $400 deposit.)</p>
+                </div>
+
+                <div class="session-grid">
+                    <button class="session-card" data-session="small">
+                        <h3>Small Session</h3>
+                        <p class="session-time">2-3 Hours</p>
+                        <p class="session-price">$400<span>+</span></p>
+                        <p class="session-desc">Palm-sized tattoos, simple designs, small portraits.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+
+                    <button class="session-card featured" data-session="medium">
+                        <h3>Medium Session</h3>
+                        <p class="session-time">4-6 Hours</p>
+                        <p class="session-price">$800<span>+</span></p>
+                        <p class="session-desc">Detailed portraits, larger custom work, multi-session pieces.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+
+                    <button class="session-card" data-session="fullday">
+                        <h3>Full Day</h3>
+                        <p class="session-time">7+ Hours</p>
+                        <p class="session-price">$1,400<span>+</span></p>
+                        <p class="session-desc">Large pieces, full sleeves, back work, major projects.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+
+                    <button class="session-card" data-session="twoday">
+                        <h3>2-Day Back to Back</h3>
+                        <p class="session-time">Consecutive Days</p>
+                        <p class="session-price">$2,400<span>+</span></p>
+                        <p class="session-desc">Major projects across two consecutive sessions. $400 deposit.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+
+                    <button class="session-card" data-session="touchup">
+                        <h3>Touch Up</h3>
+                        <p class="session-time">1-2 Hours</p>
+                        <p class="session-price">$400<span>+</span></p>
+                        <p class="session-desc">Minor adjustments and touch ups to existing work.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+
+                    <button class="session-card creative" data-session="creative">
+                        <h3>Creative Freedom</h3>
+                        <p class="session-time">Full Day Special</p>
+                        <p class="session-price"><s>$1,400</s> 10% OFF</p>
+                        <p class="session-desc">Give J full creative control on a full-day piece and save 10%. $200 deposit.</p>
+                        <span class="session-cta">Book This &rarr;</span>
+                    </button>
+                </div>
+
+                <div class="consultation-note" style="max-width: 700px; margin: 2rem auto 0;">
+                    <p><strong>Not sure which session length?</strong> Check what we discussed in your consultation. Small = 2-3 hours, Medium = 4-6 hours, Full day = 7+ hours.</p>
+                </div>
+            </div>
+
+            <!-- Selected Calendar -->
+            <div id="sessionCalendarView" style="display:none;">
+                <div class="back-link">
+                    <a href="#" id="backToSessions">&larr; Choose a different session</a>
+                </div>
+                <div class="session-cal-header">
+                    <h2 id="sessionCalTitle"></h2>
+                    <p id="sessionCalSubtitle"></p>
+                </div>
+                <div class="calendar-embed-wrap" id="sessionCalEmbed"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Additional Info -->
+<section style="background: var(--black); padding: 4rem 0;">
+    <div class="container">
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Consultation Fee</h3>
+                <p>The $50 non-refundable consultation fee is required for all new clients. This covers our planning session and goes directly toward your tattoo cost.</p>
+            </div>
+            <div class="info-card">
+                <h3>Session Deposit</h3>
+                <p>A $200 non-refundable deposit secures your appointment ($400 for 2-Day). It's applied to your final cost. All deposits are final — no refunds, no exceptions.</p>
+            </div>
+            <div class="info-card">
+                <h3>Cancellations</h3>
+                <p>All deposits are non-refundable. You may reschedule one time with 48+ hours notice. Less than 48 hours or no-shows forfeit your deposit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.client-question { text-align: center; padding: 1rem 2rem 4rem; max-width: 600px; margin: 0 auto; }
+.client-question h2 { font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+.client-question p { opacity: 0.8; margin-bottom: 2rem; }
+.question-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.question-btn { padding: 1.5rem 3rem; font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 2px; border: 2px solid var(--accent); background: transparent; color: var(--cream); cursor: pointer; transition: all 0.3s; }
+.question-btn:hover { background: var(--accent); color: var(--dark); }
+
+.back-link { margin-bottom: 2rem; }
+.back-link a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.back-link a:hover { text-decoration: underline; }
+
+.client-section { display: none; }
+.client-section.active { display: block; }
+
+.consultation-note { background: var(--gray); padding: 1.5rem; border-left: 4px solid var(--accent); margin-top: 2rem; }
+.consultation-note p { margin: 0; font-size: 0.95rem; color: var(--cream); }
+
+.returning-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; }
+.returning-intro h2 { font-family: var(--font-display); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 1rem; }
+.returning-intro p { color: var(--cream); opacity: 0.9; }
+
+.session-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.session-card { background: var(--gray); padding: 2.5rem; text-align: center; border: 2px solid var(--light-gray); transition: all 0.3s; display: flex; flex-direction: column; color: var(--white); cursor: pointer; font-family: var(--font-body); }
+.session-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.session-card.featured { border-color: var(--accent); background: var(--light-gray); position: relative; }
+.session-card.featured::before { content: 'POPULAR'; position: absolute; top: 0; right: 2rem; background: var(--accent); color: var(--black); padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; font-family: var(--font-display); }
+.session-card.creative { border-color: var(--accent); position: relative; }
+.session-card.creative::before { content: 'SPECIAL'; position: absolute; top: 0; right: 2rem; background: var(--accent); color: var(--black); padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; font-family: var(--font-display); }
+.session-card h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+.session-card .session-time { color: var(--accent); font-size: 0.9rem; margin-bottom: 1rem; }
+.session-card .session-price { font-family: var(--font-display); font-size: 3rem; margin-bottom: 1rem; line-height: 1; }
+.session-card .session-price span { font-size: 1rem; opacity: 0.7; }
+.session-card .session-price s { opacity: 0.5; font-size: 2rem; }
+.session-card .session-desc { color: var(--cream); opacity: 0.8; font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1; }
+.session-card .session-cta { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; }
+
+.session-cal-header { text-align: center; margin-bottom: 2rem; }
+.session-cal-header h2 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; margin-bottom: 0.5rem; }
+.session-cal-header p { color: var(--cream); opacity: 0.85; font-size: 0.95rem; }
+
+.calendar-embed-wrap { background: var(--white); min-height: 650px; }
+.calendar-embed-wrap iframe { min-height: 650px; width: 100%; }
+
+@media (max-width: 768px) {
+    .session-grid { gap: 1.5rem; }
+    /* Calendars are taller on mobile (form stacks vertically) */
+    .calendar-embed-wrap { min-height: 850px; }
+    .calendar-embed-wrap iframe { min-height: 850px; }
+}
+
+@media (max-width: 600px) {
+    .client-question h2 { font-size: 1.8rem; }
+    .question-btn { padding: 1.25rem 2rem; font-size: 1.1rem; width: 100%; }
+    .returning-intro h2 { font-size: 1.8rem; }
+    .session-card { padding: 2rem 1.5rem; }
+    .session-card .session-price { font-size: 2.5rem; }
+    .session-card .session-price s { font-size: 1.6rem; }
+    .session-card.featured::before,
+    .session-card.creative::before { right: 1rem; top: 0.5rem; }
+    /* Extra height on phones — GHL booking form is tallest here */
+    .calendar-embed-wrap { min-height: 900px; }
+    .calendar-embed-wrap iframe { min-height: 900px; }
+}
+</style>
+
+<script src="https://client.getinkedbyj.com/js/form_embed.js" type="text/javascript"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var clientQuestion = document.getElementById('clientQuestion');
+    var newClientSection = document.getElementById('new-client');
+    var returningClientSection = document.getElementById('returning-client');
+    var btnNo = document.getElementById('btnNo');
+    var btnYes = document.getElementById('btnYes');
+    var backToQuestion = document.getElementById('backToQuestion');
+    var backToQuestion2 = document.getElementById('backToQuestion2');
+
+    var sessionCals = {
+        small:    { id: 'guhc4eROMYjjK37jzow9', title: 'Small Session',      subtitle: '2-3 hours \u00b7 Starts at $400 \u00b7 $200 deposit to book.' },
+        medium:   { id: '0jTD9AB6f9TpUZP52bRy', title: 'Medium Session',     subtitle: '4-6 hours \u00b7 Starts at $800 \u00b7 $200 deposit to book.' },
+        fullday:  { id: 'hunqkXiCvHl0LzDifKGh', title: 'Full Day',           subtitle: '7+ hours \u00b7 Starts at $1,400 \u00b7 $200 deposit to book.' },
+        twoday:   { id: 'd9a5cMuZ5IlK7N4MW3aS', title: '2-Day Back to Back', subtitle: 'Two consecutive days \u00b7 Starts at $2,400 \u00b7 $400 deposit to book.' },
+        touchup:  { id: '6JSgnD54gFvBwlXgTJ1p', title: 'Touch Up',           subtitle: '1-2 hours \u00b7 Starts at $400 \u00b7 $200 deposit to book.' },
+        creative: { id: 'vSSrhzxYSqYO5nA9u3dy', title: 'Creative Freedom',   subtitle: 'Full Day at 10% off \u00b7 $200 deposit to book.' }
+    };
+
+    function showReturning() {
+        clientQuestion.style.display = 'none';
+        newClientSection.classList.remove('active');
+        returningClientSection.classList.add('active');
+    }
+
+    function loadSessionCalendar(key) {
+        var cfg = sessionCals[key];
+        if (!cfg) return;
+        document.getElementById('sessionCalTitle').textContent = cfg.title;
+        document.getElementById('sessionCalSubtitle').textContent = cfg.subtitle;
+        var embedWrap = document.getElementById('sessionCalEmbed');
+        embedWrap.innerHTML = '';
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://client.getinkedbyj.com/widget/booking/' + cfg.id;
+        iframe.style.width = '100%';
+        iframe.style.border = 'none';
+        iframe.style.overflow = 'hidden';
+        iframe.scrolling = 'no';
+        iframe.id = cfg.id + '_embed';
+        embedWrap.appendChild(iframe);
+        document.getElementById('sessionMenu').style.display = 'none';
+        document.getElementById('sessionCalendarView').style.display = 'block';
+    }
+
+    btnNo.addEventListener('click', function() {
+        clientQuestion.style.display = 'none';
+        newClientSection.classList.add('active');
+    });
+
+    btnYes.addEventListener('click', showReturning);
+
+    backToQuestion.addEventListener('click', function(e) {
+        e.preventDefault();
+        newClientSection.classList.remove('active');
+        clientQuestion.style.display = 'block';
+    });
+
+    backToQuestion2.addEventListener('click', function(e) {
+        e.preventDefault();
+        returningClientSection.classList.remove('active');
+        document.getElementById('sessionMenu').style.display = 'block';
+        document.getElementById('sessionCalendarView').style.display = 'none';
+        document.getElementById('sessionCalEmbed').innerHTML = '';
+        clientQuestion.style.display = 'block';
+    });
+
+    var sessionCards = document.querySelectorAll('.session-card');
+    sessionCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            loadSessionCalendar(this.getAttribute('data-session'));
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+
+    document.getElementById('backToSessions').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('sessionCalendarView').style.display = 'none';
+        document.getElementById('sessionCalEmbed').innerHTML = '';
+        document.getElementById('sessionMenu').style.display = 'block';
+    });
+
+    // Deep link: /book/?session=KEY jumps straight to that calendar (skips Yes/No)
+    function getParam(name) {
+        var m = new RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+        return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : null;
+    }
+    var deep = getParam('session');
+    if (deep && sessionCals[deep]) {
+        showReturning();
+        loadSessionCalendar(deep);
+    }
+});
+</script>
