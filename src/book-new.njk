@@ -370,5 +370,33 @@ document.addEventListener('DOMContentLoaded', function() {
         showReturning();
         loadSessionCalendar(deep);
     }
+
+    // When the GHL widget advances a step inside the iframe, scroll its top into view.
+    // The widget posts messages to the parent (used for resizing). A meaningful height
+    // change usually signals a step change, so we scroll the embed back into view.
+    var lastEmbedHeight = 0;
+    window.addEventListener('message', function(e) {
+        // Only react while a calendar is actually showing
+        var calView = document.getElementById('sessionCalendarView');
+        if (!calView || calView.style.display === 'none') return;
+
+        var data = e.data;
+        var newHeight = null;
+        if (data && typeof data === 'object') {
+            if (typeof data.height === 'number') newHeight = data.height;
+            else if (data.type && /height|resize/i.test(data.type) && data.value) newHeight = parseInt(data.value, 10);
+        }
+        if (newHeight === null) return;
+
+        // Scroll only on a significant height change (step change), not minor adjustments
+        if (Math.abs(newHeight - lastEmbedHeight) > 150) {
+            var wrap = document.getElementById('sessionCalEmbed');
+            if (wrap) {
+                var top = wrap.getBoundingClientRect().top + window.pageYOffset - 100;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }
+        }
+        lastEmbedHeight = newHeight;
+    });
 });
 </script>
