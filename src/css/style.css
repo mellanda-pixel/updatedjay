@@ -335,6 +335,7 @@ footer { background: var(--black); padding: 4rem 0 2rem; border-top: 1px solid v
     .menu-toggle { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     nav { background: var(--black); }
+    .nav-cta { display: none; }
 }
 @media (max-width: 768px) {
     .home-about-grid, .about-grid, .shop-grid, .contact-grid, .book-grid { grid-template-columns: 1fr; gap: 2rem; }
