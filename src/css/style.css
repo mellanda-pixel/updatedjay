@@ -194,6 +194,7 @@ footer { background: var(--black); padding: 4rem 0 2rem; border-top: 1px solid v
 .hourly-note { color: var(--cream); margin-top: 1rem; font-size: 0.95rem; }
 .pricing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
 .price-card { background: var(--gray); padding: 2.5rem; text-align: center; position: relative; border: 2px solid var(--light-gray); transition: all 0.3s; }
+.pricing-cards-row3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem auto 0; }
 .price-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 .price-card.featured { border-color: var(--accent); background: var(--light-gray); }
 .price-card.featured::before { content: 'POPULAR'; position: absolute; top: 0; right: 2rem; background: var(--accent); color: var(--black); padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 0.1em; font-family: var(--font-display); }
