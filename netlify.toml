@@ -40,3 +40,8 @@
   from = "/booking-success/deposit/"
   to = "/book/"
   status = 301
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
