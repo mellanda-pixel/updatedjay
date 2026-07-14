@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getinkedbyj.com/sitemap.xml
