@@ -1,0 +1,160 @@
+---
+layout: base.njk
+pagination:
+  data: bookings
+  size: 1
+  alias: booking
+permalink: "/thank-you/{{ booking.slug }}/"
+eleventyComputed:
+  title: "You're Booked"
+  description: "Your booking with J is confirmed."
+bookings:
+  - slug: consultation
+    label: Consultation
+    heading: "Consultation Booked"
+    detail: "Your $50 consultation is locked in. It goes toward your tattoo."
+    next: "I'll call you at your scheduled time. Come with your idea, any reference images, and questions. We'll talk through placement, sizing, and I'll give you a real quote."
+  - slug: small
+    label: Small Session
+    heading: "Session Booked"
+    detail: "Your Small Session is locked in. Deposit received."
+    next: "You'll get a confirmation email and reminders before your appointment. Watch for your waiver link, complete it before you come in."
+  - slug: medium
+    label: Medium Session
+    heading: "Session Booked"
+    detail: "Your Medium Session is locked in. Deposit received."
+    next: "You'll get a confirmation email and reminders before your appointment. Watch for your waiver link, complete it before you come in."
+  - slug: full-day
+    label: Full Day
+    heading: "Full Day Booked"
+    detail: "Your Full Day Session is locked in. Deposit received."
+    next: "You'll get a confirmation email and reminders before your appointment. Watch for your waiver link, complete it before you come in. Eat well, stay hydrated, no alcohol the night before."
+  - slug: two-day
+    label: 2-Day Back to Back
+    heading: "2-Day Session Booked"
+    detail: "Your 2-Day Back to Back is locked in. Deposit received."
+    next: "Both days are reserved for you. You'll get confirmation emails and reminders. Watch for your waiver link. Eat well, stay hydrated, no alcohol the night before."
+  - slug: touch-up
+    label: Touch Up
+    heading: "Touch Up Booked"
+    detail: "Your Touch Up is locked in. Deposit received."
+    next: "You'll get a confirmation email and a reminder before your appointment."
+  - slug: creative-freedom
+    label: Creative Freedom
+    heading: "Creative Freedom Booked"
+    detail: "Your Creative Freedom session is locked in. Deposit received."
+    next: "You gave me the reins, so I'll come with a design built for you. You'll get a confirmation email and reminders. Watch for your waiver link."
+---
+
+<section class="ty-page">
+    <div class="container">
+        <div class="ty-box">
+            <span class="ty-check">&#10003;</span>
+            <span class="section-tag">{{ booking.label }}</span>
+            <h1>{{ booking.heading }}</h1>
+            <p class="ty-detail">{{ booking.detail }}</p>
+
+            <div class="ty-next">
+                <h2>What Happens Next</h2>
+                <p>{{ booking.next }}</p>
+            </div>
+
+            <div class="ty-links">
+                <a href="/" class="btn btn-primary">Back to Site</a>
+                <a href="/portfolio/" class="ty-secondary">See More Work</a>
+            </div>
+
+            <p class="ty-note">Questions? Text or email me at <a href="mailto:hello@getinkedbyj.com">hello@getinkedbyj.com</a></p>
+        </div>
+    </div>
+</section>
+
+<style>
+.ty-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    padding: 9rem 0 5rem;
+}
+.ty-box {
+    background: var(--gray);
+    padding: 3rem;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+.ty-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.5rem;
+    background: var(--accent);
+    color: var(--black);
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+}
+.ty-box h1 {
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0.5rem 0 1rem;
+}
+.ty-detail {
+    color: var(--cream);
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+.ty-next {
+    background: var(--dark);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+.ty-next h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+.ty-next p {
+    color: var(--cream);
+    font-size: 0.95rem;
+    margin: 0;
+}
+.ty-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+.ty-secondary {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.ty-secondary:hover { text-decoration: underline; }
+.ty-note {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin: 0;
+}
+.ty-note a { color: var(--accent); }
+
+@media (max-width: 600px) {
+    .ty-box { padding: 2rem 1.5rem; }
+    .ty-box h1 { font-size: 2rem; }
+    .ty-links { flex-direction: column; }
+    .ty-links .btn { width: 100%; }
+}
+</style>
