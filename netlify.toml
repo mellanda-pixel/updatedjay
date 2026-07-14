@@ -10,3 +10,33 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+
+[[redirects]]
+  from = "/book-old/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/pay-deposit/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/checkout/consultation/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/checkout/deposit/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/booking-success/consultation/"
+  to = "/book/"
+  status = 301
+
+[[redirects]]
+  from = "/booking-success/deposit/"
+  to = "/book/"
+  status = 301
